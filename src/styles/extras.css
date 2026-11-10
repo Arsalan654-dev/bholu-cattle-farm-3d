@@ -1,0 +1,272 @@
+/* ============================================================
+   EXTRAS — 3D holders, story fx, milk flow, misc overrides
+   ============================================================ */
+
+/* 3D holders */
+.orb-holder {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.orb3d {
+  position: absolute;
+  inset: 0;
+  pointer-events: auto;
+}
+.orb-cta {
+  width: 100%;
+  height: 100%;
+  border-radius: 51% 49% 47% 53% / 49% 51% 49% 51%;
+  background: radial-gradient(120% 120% at 30% 28%, #fff, #f2ebe2 45%, #e0d3c6 100%);
+  box-shadow:
+    inset -30px -26px 60px -26px rgba(120, 90, 60, 0.5),
+    inset 24px 20px 54px -20px rgba(255, 255, 255, 0.95),
+    0 70px 140px -50px rgba(0, 0, 0, 0.85),
+    0 0 160px -40px rgba(251, 248, 244, 0.45);
+  animation: orb-idle 9s ease-in-out infinite;
+}
+
+/* sec-head body */
+.sec-head__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  text-align: right;
+  max-width: 950px;
+}
+.sec-head__body .lede {
+  max-width: 52ch;
+}
+@media (max-width: 900px) {
+  .sec-head__body {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* hero refinements */
+.hero__title .wline > span {
+  margin-right: 0.16em;
+}
+.hero__scroll span {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* manifesto facts */
+.manifesto__fact b i {
+  font-style: normal;
+}
+
+/* story fx */
+.story__layer {
+  overflow: hidden;
+}
+.story__layer img,
+.story__baseimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.story__grain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  pointer-events: none;
+}
+.story__stream {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+.story.fx-milk .story__stream {
+  opacity: 1;
+}
+.story__stream svg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 46%;
+  opacity: 0.95;
+  filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.35));
+}
+.stream-core {
+  animation: stream-flow 1.1s linear infinite;
+}
+.stream-core--slow {
+  animation: stream-flow 2.1s linear infinite reverse;
+}
+@keyframes stream-flow {
+  to {
+    stroke-dashoffset: -57;
+  }
+}
+.story__scan {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 5px),
+    linear-gradient(180deg, transparent 30%, rgba(180, 220, 240, 0.08) 50%, transparent 70%);
+}
+.story__scan::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 120px;
+  top: -120px;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+  animation: scan-sweep 3.4s linear infinite;
+}
+@keyframes scan-sweep {
+  to {
+    transform: translateY(calc(100vh + 120px));
+  }
+}
+.story.fx-processing .story__scan {
+  opacity: 1;
+}
+.story__glass {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+.story.fx-processing .story__glass {
+  opacity: 1;
+}
+.story__chip {
+  display: flex;
+  gap: 22px;
+  padding: 16px 26px;
+  border-radius: 18px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 6vh;
+}
+.story__chip span + span {
+  border-left: 1px solid var(--line-d);
+  padding-left: 22px;
+}
+.story__trans {
+  will-change: transform;
+}
+.story__title {
+  font-size: clamp(1.7rem, 3.4vw, 3rem);
+  color: var(--milk);
+  font-weight: 840;
+  font-stretch: 105%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  line-height: 1.04;
+}
+
+/* story fallback list */
+.story-section h2 {
+  margin-bottom: 48px;
+}
+
+/* journal runway */
+@media (min-width: 901px) {
+  .journal {
+    padding-bottom: 150vh;
+  }
+}
+
+/* recipes glass overlay — light, no heavy blur */
+.recipes__glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0) 38%);
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: none;
+  box-shadow: none;
+}
+.recipes__glass::after {
+  display: none;
+}
+.recipes__media::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: radial-gradient(220px circle at var(--gx) var(--gy), rgba(255, 255, 255, 0.28), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+}
+.recipes__media:hover::before {
+  opacity: 1;
+}
+.recipes__media img,
+.recipes__media .clip {
+  transition: transform 1s var(--ease-soft);
+}
+.recipes__media:hover img,
+.recipes__media:hover .clip {
+  transform: scale(1.06);
+}
+.showroom__slab {
+  transition: transform 0.7s var(--ease-soft);
+  will-change: transform;
+}
+.showroom__slab img,
+.showroom__slab .clip {
+  transition: transform 1s var(--ease-soft);
+}
+.showroom__slab:hover img,
+.showroom__slab:hover .clip {
+  transform: scale(1.05);
+}
+.journal__media {
+  transition: transform 0.7s var(--ease-soft);
+  will-change: transform;
+}
+
+/* light-surface field overrides */
+.glass--light .field input,
+.glass--light .field select,
+.glass--light .field textarea {
+  color: var(--ink);
+  border-color: var(--line-l);
+  background: rgba(255, 255, 255, 0.72);
+}
+.glass--light .field label {
+  color: var(--muted-l);
+}
+.glass--light .field input:focus + label,
+.glass--light .field input:not(:placeholder-shown) + label,
+.glass--light .field select:focus + label,
+.glass--light .field select:valid + label,
+.glass--light .field textarea:focus + label,
+.glass--light .field textarea:not(:placeholder-shown) + label,
+.glass--light .field--sel label {
+  color: var(--red);
+}
+
+/* route loading ghost */
+.route-loading {
+  min-height: 100vh;
+  background: var(--black);
+}
+
+/* reveal helpers used across sections */
+[data-scrubw] {
+  display: inline-block;
+  will-change: opacity;
+}
