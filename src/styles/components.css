@@ -95,11 +95,24 @@
 .nav__brand {
   display: inline-flex;
   align-items: center;
+  gap: 10px;
+  padding: 5px 13px 5px 7px;
+  border-radius: 999px;
+  background: rgba(10, 8, 18, 0.58);
+  border: 1px solid var(--glass-d-border);
+  backdrop-filter: blur(12px);
 }
 .nav__logo {
   height: 46px;
   width: auto;
   filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.55));
+}
+.nav__brand-text {
+  font-size: 1.05rem;
+  font-weight: 760;
+  letter-spacing: 0.02em;
+  color: var(--milk);
+  white-space: nowrap;
 }
 .nav__pill {
   position: absolute;
@@ -204,7 +217,7 @@
   transition: background 0.25s ease, color 0.25s ease;
 }
 .nav__sublink:hover {
-  background: rgba(208, 0, 0, 0.22);
+  background: rgba(124, 58, 237, 0.22);
   color: #fff;
 }
 .nav__right {
@@ -226,7 +239,7 @@
   color: #fff;
   background: var(--red);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 16px 36px -16px rgba(208, 0, 0, 0.6);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 16px 36px -16px rgba(124, 58, 237, 0.6);
   transition: background 0.3s ease;
 }
 .nav__shop:hover {
@@ -273,7 +286,7 @@
   position: fixed;
   inset: 0;
   z-index: 250;
-  background: radial-gradient(110% 90% at 85% 0%, rgba(208, 0, 0, 0.25), transparent 55%), var(--black);
+  background: radial-gradient(110% 90% at 85% 0%, rgba(124, 58, 237, 0.25), transparent 55%), var(--black);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -321,6 +334,9 @@
 @media (max-width: 640px) {
   .nav__logo {
     height: 36px;
+  }
+  .nav__brand-text {
+    font-size: 0.86rem;
   }
   .nav__shop {
     display: none;
@@ -635,7 +651,7 @@
 }
 .cart-item__remove:hover {
   color: #fff;
-  background: rgba(208, 0, 0, 0.35);
+  background: rgba(124, 58, 237, 0.35);
 }
 .cart-drawer__foot {
   padding: 20px 26px 26px;
@@ -754,7 +770,7 @@
   font-weight: 900;
   font-stretch: 100%;
   letter-spacing: -0.03em;
-  color: rgba(208, 0, 0, 0.9);
+  color: rgba(124, 58, 237, 0.9);
   will-change: transform;
 }
 
@@ -1009,7 +1025,7 @@
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
-  border-color: rgba(255, 59, 47, 0.55);
+  border-color: rgba(236, 72, 153, 0.55);
   background: rgba(255, 255, 255, 0.06);
 }
 .field input:focus + label,

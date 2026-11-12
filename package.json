@@ -1,8 +1,8 @@
 {
-  "name": "bholu-cattle-farm-3d",
+  "name": "ars-animated-3d",
   "private": true,
   "version": "1.0.0",
-  "description": "Bholu Cattle & Dairy Farm - 3D animated liquid design frontend",
+  "description": "ARS Animated 3D — immersive 3D web experiences and the Bholu Farms case study",
   "type": "module",
   "scripts": {
     "dev": "vite",

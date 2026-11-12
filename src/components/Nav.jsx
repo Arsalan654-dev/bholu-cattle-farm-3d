@@ -74,8 +74,9 @@ export default function Nav() {
     <>
       <header className="nav" ref={rootRef}>
         <div className="nav__row">
-          <TLink to="/" className="nav__brand" data-cursor="link" aria-label="Bholu Farms home">
-            <img className="nav__logo" src="/images/logo.webp" alt="Bholu Cattle & Dairy Farm" />
+          <TLink to="/" className="nav__brand" data-cursor="link" aria-label="ARS Animated 3D home">
+            <img className="nav__logo" src="/images/ars-animated-3d-icon.png" alt="" />
+            <span className="nav__brand-text">ARS Animated 3D</span>
           </TLink>
 
           <nav className="nav__pill glass" ref={pillRef}>

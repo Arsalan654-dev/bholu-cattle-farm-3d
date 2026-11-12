@@ -108,22 +108,22 @@ function Atmosphere({ quality }) {
     <>
       <ambientLight intensity={0.22} />
       <directionalLight position={[3.2, 4.1, 2.4]} intensity={1.35} color="#ffffff" />
-      <pointLight position={[-2.6, 1.1, -1.6]} intensity={0.9} decay={0} color="#ff2a1d" />
-      <pointLight position={[2.6, -1.3, -1.2]} intensity={0.7} decay={0} color="#7d9160" />
+      <pointLight position={[-2.6, 1.1, -1.6]} intensity={0.9} decay={0} color="#7C3AED" />
+      <pointLight position={[2.6, -1.3, -1.2]} intensity={0.7} decay={0} color="#22D3EE" />
       <Environment resolution={256} frames={1}>
         <Lightformer form="rect" intensity={5} position={[0, 6, -2]} scale={[8, 8, 1]} color="#ffffff" />
-        <Lightformer form="rect" intensity={2.2} position={[-5, 0, 1]} rotation-y={Math.PI / 2} scale={[8, 2.6, 1]} color="#ffd9d2" />
-        <Lightformer form="rect" intensity={1.6} position={[5, -1, 1]} rotation-y={-Math.PI / 2} scale={[8, 2.2, 1]} color="#e4ecd9" />
+        <Lightformer form="rect" intensity={2.2} position={[-5, 0, 1]} rotation-y={Math.PI / 2} scale={[8, 2.6, 1]} color="#EC4899" />
+        <Lightformer form="rect" intensity={1.6} position={[5, -1, 1]} rotation-y={-Math.PI / 2} scale={[8, 2.2, 1]} color="#22D3EE" />
       </Environment>
       <ContactShadows position={[0, -2.35, 0]} opacity={0.6} scale={13} blur={2.7} far={5.5} color="#000000" />
-      <gridHelper ref={gridRef} args={[30, 46, '#4d463d', '#221c18']} position={[0, -2.35, -1.4]} />
+      <gridHelper ref={gridRef} args={[30, 46, '#5B21B6', '#14101F']} position={[0, -2.35, -1.4]} />
       {quality.particles > 0 && (
         <Sparkles count={quality.particles} scale={[11, 6.5, 5]} size={2.6} speed={0.32} opacity={0.5} color="#ffffff" />
       )}
       {quality.particles > 0 && (
-        <Sparkles count={Math.floor(quality.particles * 0.3)} scale={[9, 5, 4]} size={1.6} speed={0.24} opacity={0.35} color="#a9c08a" />
+        <Sparkles count={Math.floor(quality.particles * 0.3)} scale={[9, 5, 4]} size={1.6} speed={0.24} opacity={0.35} color="#22D3EE" />
       )}
-      <fog attach="fog" args={['#0a0808', 7.5, 26]} />
+      <fog attach="fog" args={['#0A0812', 7.5, 26]} />
     </>
   )
 }

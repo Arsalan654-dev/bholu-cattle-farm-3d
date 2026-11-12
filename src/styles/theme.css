@@ -1,16 +1,16 @@
 /* ============================================================
-   BHOLU FARMS — DESIGN SYSTEM
-   "liquid glass agriculture" · dark editorial · Bholu red
+   ARS ANIMATED 3D — DESIGN SYSTEM
+   "liquid glass" · dark editorial · ARS violet
    Display: Archivo (variable width) · Meta: JetBrains Mono
    ============================================================ */
 
 :root {
   /* brand + ink */
-  --red: #d00000;
-  --red-bright: #ff3b2f;
-  --red-deep: #8f0000;
-  --black: #0a0808;
-  --black-2: #131009;
+  --red: #7C3AED;
+  --red-bright: #EC4899;
+  --red-deep: #5B21B6;
+  --black: #0A0812;
+  --black-2: #14101F;
   --ink: #16110d;
   --ink-2: #332a25;
   --muted-d: #8f847c;
@@ -20,8 +20,8 @@
   --milk: #fbf8f4;
   --milk-2: #f3ece4;
   --cream: #ece2d7;
-  --green: #5a6b42;
-  --green-soft: #94a37c;
+  --green: #0E7490;
+  --green-soft: #22D3EE;
   --beige: #d9cdbd;
 
   /* surfaces */
@@ -273,7 +273,7 @@ h4 {
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.25),
-    0 20px 44px -18px rgba(208, 0, 0, 0.55);
+    0 20px 44px -18px rgba(124, 58, 237, 0.55);
   cursor: pointer;
   white-space: nowrap;
   transition: background 0.35s ease, box-shadow 0.35s ease;
@@ -364,7 +364,7 @@ h4 {
   height: 6px;
   border-radius: 50%;
   background: var(--red);
-  box-shadow: 0 0 10px rgba(255, 59, 47, 0.8);
+  box-shadow: 0 0 10px rgba(236, 72, 153, 0.8);
   animation: label-pulse 2.4s ease-in-out infinite;
 }
 @keyframes label-pulse {

@@ -66,10 +66,10 @@ export default function Hero() {
       <div className="container hero__copy">
         <div className="hero__top">
           <span className="mono" data-herofade>
-            Bholu Cattle &amp; Dairy Farm — Karachi
+            ARS Animated 3D × Bholu Farms — Karachi
           </span>
           <span className="hero__side" data-herofade>
-            Pure from origin
+            Interactive case study
           </span>
         </div>
 

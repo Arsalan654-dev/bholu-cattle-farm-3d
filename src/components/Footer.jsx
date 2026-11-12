@@ -35,8 +35,8 @@ export default function Footer() {
     <footer className="footer" ref={rootRef}>
       <div className="container footer__grid">
         <div data-rise>
-          <img className="footer__logo" src="/images/logo.webp" alt="Bholu Cattle & Dairy Farm" />
-          <p className="footer__tag">{CONTACT.tagline}</p>
+          <img className="footer__logo" src="/images/ars-animated-3d-logo-light.png" alt="ARS Animated 3D" />
+          <p className="footer__tag">Immersive 3D web experiences, crafted by ARS Animated 3D. This site is a live case study for Bholu Farms.</p>
           <div className="footer__socials">
             {SOCIALS.map(({ href, label, Icon }) => (
               <a key={label} className="footer__social" href={href} target="_blank" rel="noreferrer" aria-label={label}>
@@ -90,12 +90,12 @@ export default function Footer() {
       </div>
 
       <div className="footer__bar">
-        <span>© {new Date().getFullYear()} Bholu Cattle &amp; Dairy Farm. All rights reserved.</span>
-        <span>Farm Fresh — Pure — Healthy</span>
+        <span>© {new Date().getFullYear()} ARS Animated 3D. Built for Bholu Farms.</span>
+        <span>Immersive · Interactive · Crafted</span>
       </div>
 
       <span className="footer__giant" aria-hidden="true">
-        BHOLU
+        ARS 3D
       </span>
     </footer>
   )
